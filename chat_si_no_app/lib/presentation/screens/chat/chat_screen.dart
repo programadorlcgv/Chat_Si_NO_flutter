@@ -1,5 +1,6 @@
 import 'package:chat_si_no_app/presentation/widgets/chat/my_message_bubble.dart';
 import 'package:chat_si_no_app/presentation/widgets/chat/si_no_message_bubble.dart';
+import 'package:chat_si_no_app/presentation/widgets/shared/message_field_box.dart';
 import 'package:flutter/material.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -43,7 +44,9 @@ class _ChatView extends StatelessWidget {
                 },
               )
             ),
-            Text("Espacio para escribir los mensajes")
+
+            /// caja de texto para escribir mensajes
+            MessageFieldBox(),
             
           ],
         ),
