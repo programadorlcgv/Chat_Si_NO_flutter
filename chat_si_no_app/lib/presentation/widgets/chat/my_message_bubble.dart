@@ -13,7 +13,6 @@ class MyMessageBubble extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Container(
-          width:  250,
           decoration: BoxDecoration(
             color: colors.primary,
             borderRadius: BorderRadius.circular(20),

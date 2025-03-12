@@ -1,4 +1,5 @@
 import 'package:chat_si_no_app/presentation/widgets/chat/my_message_bubble.dart';
+import 'package:chat_si_no_app/presentation/widgets/chat/si_no_message_bubble.dart';
 import 'package:flutter/material.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -35,7 +36,10 @@ class _ChatView extends StatelessWidget {
               child: ListView.builder(
                 itemCount: 100,
                 itemBuilder: (context, index) {
-                  return MyMessageBubble();
+                  // alternamos los mensajes que se muestran
+                  return (index % 2 == 0 )
+                    ? SiNoMessageBubble()
+                    : MyMessageBubble();
                 },
               )
             ),
