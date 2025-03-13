@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 class ChatProvider extends ChangeNotifier{
 
-  List<Message> message = [
+  List<Message> messageList = [
     Message(text: "hola terminator", fromWho: FromWho.me),
-    Message(text: "Vas a destruir a Connor", fromWho: FromWho.his),
+    Message(text: "Vas a destruir a Connor?", fromWho: FromWho.me),
   ];
 
   Future<void> sendMessage(String text) async{

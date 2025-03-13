@@ -1,13 +1,21 @@
+import 'package:chat_si_no_app/domain/entities/message.dart';
 import 'package:flutter/material.dart';
 
 class MyMessageBubble extends StatelessWidget {
-  const MyMessageBubble({super.key});
+
+  final Message message;
+
+  const MyMessageBubble({super.key, required this.message});
+
+  
 
   @override
   Widget build(BuildContext context) {
 
     //Guardamos los colores de tema en colors
     final colors = Theme.of(context).colorScheme;
+   
+
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
@@ -19,7 +27,7 @@ class MyMessageBubble extends StatelessWidget {
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Text("Laborum magna elit commodo sunt.", style: TextStyle(color: Colors.white),),
+            child: Text(message.text, style: TextStyle(color: Colors.white),),
           ),
         ),
         SizedBox(height: 10),
