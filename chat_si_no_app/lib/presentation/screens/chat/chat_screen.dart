@@ -44,7 +44,7 @@ class _ChatView extends StatelessWidget {
                 itemCount: chatProvider.messageList.length,
                 itemBuilder: (context, index) {
                   final message = chatProvider.messageList[index];
-                  
+
                   return (message.fromWho == FromWho.his )
                     ? SiNoMessageBubble()
                     : MyMessageBubble(message: message,);
@@ -53,7 +53,9 @@ class _ChatView extends StatelessWidget {
             ),
 
             /// caja de texto para escribir mensajes
-            MessageFieldBox(),
+            MessageFieldBox(
+              onValue: chatProvider.sendMessage,
+            ),
             
           ],
         ),
