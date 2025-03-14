@@ -1,7 +1,11 @@
+import 'package:chat_si_no_app/domain/entities/message.dart';
 import 'package:flutter/material.dart';
 
 class SiNoMessageBubble extends StatelessWidget {
-  const SiNoMessageBubble({super.key});
+  
+  final Message message;
+  
+  const SiNoMessageBubble({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +23,12 @@ class SiNoMessageBubble extends StatelessWidget {
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Text("Si o No", style: TextStyle(color: Colors.white),),
+            child: Text(message.text, style: TextStyle(color: Colors.white),),
           ),
         ),
         SizedBox(height: 5),
 
-        _ImageBuble(),
+        _ImageBuble(image: message.imageUrl!),
 
          SizedBox(height: 20),
 
@@ -36,6 +40,10 @@ class SiNoMessageBubble extends StatelessWidget {
 
 class _ImageBuble extends StatelessWidget {
 
+  final String image;
+
+  const _ImageBuble({required this.image});
+
   @override
   Widget build(BuildContext context) {
 
@@ -43,8 +51,7 @@ class _ImageBuble extends StatelessWidget {
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
-      child: Image.network(
-        "https://yesno.wtf/assets/yes/9-6403270cf95723ae4664274db51f1fd4.gif",
+      child: Image.network(image,
         width: size.width * 0.7,
         height: 150,
         fit: BoxFit.cover,
